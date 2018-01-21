@@ -1,0 +1,239 @@
+
+
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+			<!-- <button type="button" class="navbar-toggle" data-toggle="collapse"  data-target="#navbar" aria-expanded="true" aria-controls="navbar"> -->
+					<span class="sr-only">Toggle Navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					
+			</button>
+      <div class="navbar-collapse js-navbar-collapse">
+      <ul class="nav navbar-nav page-menu">
+        <li><a class="navbar-brand" [routerLink]="['/text']" style="color: whitesmoke; margin-top: 10pt;
+    margin-right: 20pt;">
+      <span class="glyphicon glyphicon-home"></span></a></li>
+      <li><a class="navbar-brand" [routerLink]="['/']" style="color: whitesmoke;">
+      <h5 style="color: whitesmoke;">RKVBPET</h5></a>
+      <br/>
+      <h6 style="color: whitesmoke;">Smart Village</h6></li>
+      </ul>
+			
+      
+      </div>
+
+		
+	    </div>
+<div  class="navbar-collapse js-navbar-collapse">
+   <ul class="nav navbar-nav page-menu">
+       <li class="dropdown">
+           <a href="#" id="menu-toggle" class="dropdown-toggle" data-toggle="dropdown" role="button" 
+           aria-haspopup="true" aria-expanded="false" (click)="toggle()" style="color: whitesmoke;">Programs <span>
+                   <!-- <i class="glyphicon glyphicon-menu-up" aria-hidden="true"></i> -->
+                   <i class="glyphicon glyphicon-menu-down" aria-hidden="true"></i>
+          </span></a>
+	    
+		<ul class="dropdown-menu" style="display: none;  padding-top: 5px; margin-top: 0px; padding-bottom: 5px; margin-bottom: 0px;">
+		  <li><a href="#">Education</a></li>
+                  <li><a href="#">Skill Development</a></li>
+                  <li><a href="#">Health Care</a></li>
+		  <li><a href="#">Sports</a></li>
+		</ul>
+	</li>
+	<li class="dropdown">
+           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: ghostwhite;">Community Participation
+	     <span>
+                  <!--  <i class="icon icon-up-arrow up-arrow" aria-hidden="true"></i> -->
+                   <i class="glyphicon glyphicon-menu-down" aria-hidden="true"></i>
+              </span></a>
+		<ul class="dropdown-menu" style="display: none;  padding-top: 5px; margin-top: 0px; padding-bottom: 5px; margin-bottom: 0px;">
+		  <li><a href="#">Post a Problem</a></li>
+                  <li><a href="#">Share your Queries</a></li>
+                  <li><a href="#">List post views</a></li>
+		  <li><a href="#">List Success Stories</a></li>
+		</ul>
+	</li>
+	<li class="dropdown">
+           <a href="#" style="color: whitesmoke;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >About Us
+	     <span class="pull-right">
+                   <!-- <i class="icon icon-up-arrow up-arrow" aria-hidden="true"></i> -->
+                  <i class="glyphicon glyphicon-menu-down" aria-hidden="true"></i>
+              </span></a>
+		<ul class="dropdown-menu" style="display: none;  padding-top: 5px; margin-top: 0px; padding-bottom: 5px; margin-bottom: 0px;">
+		  <li><a href="#">Profile</a></li>
+                  <li><a href="#">Vision</a></li>
+                  <li><a href="#">Mission</a></li>
+		  <li><a href="#">Objectives</a></li>
+		</ul>
+	</li>
+    <li class="dropdown"><a *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" 
+      style="color: whitesmoke;"> Contact Us 
+                <i class="glyphicon glyphicon-menu-down" aria-hidden="true"></i></a>
+                  <ul class="dropdown-menu">
+            <li>9945344335</li>
+            <li>rkvbpet.smartvillage@gmail.com</li>
+                        
+          </ul>
+       
+               </li>
+
+     </ul>
+     <ul class="nav navbar-nav navbar-right">
+              <li><a *ngIf="authService.loggedIn()"[routerLinkActive]="['active']" 
+              [routerLinkActiveOptions]="{exact:true}" [routerLink]="['/profile']" style="color: whitesmoke;">Profile </a></li>
+      			<li><a *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" 
+              [routerLinkActiveOptions]="{exact:true}" [routerLink]="['/login']" style="color: whitesmoke;">
+              <span class="fa fa-unlock-alt"></span>
+              Login </a></li>
+            
+
+      			<li><a *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" 
+              [routerLinkActiveOptions]="{exact:true}" [routerLink]="['/register']" 
+              style="color: whitesmoke;">
+              <span class="fa fa-user"></span>
+              Register </a></li>
+
+<!-- 
+  <li>
+  <a class="dropdown" style="color: whitesmoke;" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
+    <i class="glyphicon glyphicon-bell"></i>
+  </a>
+  
+  <ul class="dropdown-menu notifications" role="menu" aria-labelledby="dLabel">
+    
+    <div class="notification-heading"><h4 class="menu-title">Notifications</h4><h4 class="menu-title pull-right">View all<i class="glyphicon glyphicon-circle-arrow-right"></i></h4>
+    </div>
+    <li class="divider"></li>
+   <div class="notifications-wrapper">
+     <a class="content" href="#">
+      
+       <div class="notification-item">
+        <h4 class="item-title">Evaluation Deadline 1 · day ago</h4>
+        <p class="item-info">Marketing 101, Video Assignment</p>
+      </div>
+       
+    </a>
+     <a class="content" href="#">
+      <div class="notification-item">
+        <h4 class="item-title">Evaluation Deadline 1 · day ago</h4>
+        <p class="item-info">Marketing 101, Video Assignment</p>
+      </div>
+    </a>
+     <a class="content" href="#">
+      <div class="notification-item">
+        <h4 class="item-title">Evaluation Deadline 1 • day ago</h4>
+        <p class="item-info">Marketing 101, Video Assignment</p>
+      </div>
+    </a>
+     <a class="content" href="#">
+      <div class="notification-item">
+        <h4 class="item-title">Evaluation Deadline 1 • day ago</h4>
+        <p class="item-info">Marketing 101, Video Assignment</p>
+      </div>
+
+    </a>
+     <a class="content" href="#">
+      <div class="notification-item">
+        <h4 class="item-title">Evaluation Deadline 1 • day ago</h4>
+        <p class="item-info">Marketing 101, Video Assignment</p>
+      </div>
+    </a>
+     <a class="content" href="#">
+      <div class="notification-item">
+        <h4 class="item-title">Evaluation Deadline 1 • day ago</h4>
+        <p class="item-info">Marketing 101, Video Assignment</p>
+      </div>
+    </a>
+
+   </div>
+    <li class="divider"></li>
+    <div class="notification-footer"><h4 class="menu-title">View all<i class="glyphicon glyphicon-circle-arrow-right"></i></h4></div>
+  </ul>
+  
+</li> -->
+            <li *ngIf="authService.loggedIn()"><a (click)="onLogoutClick()" href="#" 
+              style="color: whitesmoke;">Logout </a></li>
+        
+ </ul>
+ </div>
+
+                
+
+
+
+                        
+
+
+
+	   
+
+<!-- 
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <a class="navbar-brand" href="#">Brand/Logo</a>
+  <button class="navbar-toggler" (click)="collapse=!collapse" type="button" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="navbar-collapse" (click)="collapse=true" [hidden]="collapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+    </ul>
+  </div>
+</nav> -->
+      		
+
+      	
+      
+ 	</div>
+ </nav>
+<!-- 
+ </body> -->
+ <!-- <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Project name</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li class="dropdown-header">Nav header</li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>
+              <li><a href="../navbar-static-top/">Static top</a></li>
+              <li><a href="../navbar-fixed-top/">Fixed top</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav> -->
+
+
+
+   
